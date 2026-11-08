@@ -9,6 +9,10 @@ Static A/B landing pages for shop.prohall.ai, measured with Split.
 
 Both pages share `/select-one/v1/assets/styles.css`; only the `<title>` and `<h1>` differ.
 
+## Deploy (GitHub Pages)
+Settings → Pages → Source: **Deploy from a branch**, branch `main`, folder `/ (root)`.
+URLs: `https://farazghaffar.github.io/prohall-landing-pages/select-one/v1/a/` and `.../select-one/v1/b/` (keep the trailing slash).
+
 ## Deploy (Vercel)
 Import this repo in Vercel → Framework preset **Other**, no build command, output directory `.` (root).
 Public URLs will be `https://<project>.vercel.app/select-one/v1/a` and `/select-one/v1/b`.

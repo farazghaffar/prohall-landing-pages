@@ -1,6 +1,6 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
+  "trailingSlash": true,
   "redirects": [
     { "source": "/", "destination": "https://shop.prohall.ai/collections/all", "permanent": false }
   ],
