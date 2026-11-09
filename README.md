@@ -1,25 +1,30 @@
-# Prohall landing pages
+# Prohall Select One — A/B landing pages
 
-Static A/B landing pages for shop.prohall.ai, measured with Split.
+Static A/B landing pages for [Prohall Select One](https://shop.prohall.ai/products/prohall-select-one) on shop.prohall.ai, measured with Split.
 
-| Version | Path | Headline |
+**Test: layout.** Both versions use the same headline ("Meet Prohall Select One — the Brazilian smoothing treatment"), copy, photos, price and buttons; only the design differs.
+
+| Version | Path | Layout |
 |---|---|---|
-| A | `/select-one/v1/a` | Meet Prohall Select One — the Brazilian smoothing treatment |
-| B | `/select-one/v1/b` | How to use Prohall Select One for smooth, frizz-free hair |
+| A | `/select-one/v1/a/` | Classic: split hero, card grids, dark ingredients band |
+| B | `/select-one/v1/b/` | Editorial: centered arched hero, numbered lists, timeline, dark buy band |
 
-Both pages share `/select-one/v1/assets/styles.css`; only the `<title>` and `<h1>` differ.
+Both load `/select-one/v1/assets/styles.css` (brand tokens + layout A); B also loads `styles-b.css`.
 
-## Deploy (GitHub Pages)
+## Live links (GitHub Pages)
 Settings → Pages → Source: **Deploy from a branch**, branch `main`, folder `/ (root)`.
-URLs: `https://farazghaffar.github.io/prohall-landing-pages/select-one/v1/a/` and `.../select-one/v1/b/` (keep the trailing slash).
 
-## Deploy (Vercel)
-Import this repo in Vercel → Framework preset **Other**, no build command, output directory `.` (root).
-Public URLs will be `https://<project>.vercel.app/select-one/v1/a` and `/select-one/v1/b`.
+- A: https://farazghaffar.github.io/prohall-landing-pages/select-one/v1/a/
+- B: https://farazghaffar.github.io/prohall-landing-pages/select-one/v1/b/
+
+Keep the trailing slash.
+
+## Deploy (Vercel, optional)
+Import this repo → preset **Other**, no build command. URLs: `https://<project>.vercel.app/select-one/v1/a/` and `/b/`.
 
 ## Before starting a Split run
 1. Replace the placeholder `<script ... external-landing.js>` tag at the bottom of BOTH pages with the exact tag from Split → New run → Install tracking.
-2. Install the Shopify theme bridge (`split-tracking.js` + `split-tracking.liquid`) on the live theme.
+2. The Shopify theme bridge (`split-tracking.js` + `split-tracking.liquid`) must be installed on the live theme.
 3. Never put raw page URLs in ads — use Split's generated links.
 
 For a redesign, add `/select-one/v2/...` and start a new run; keep v1 unchanged.

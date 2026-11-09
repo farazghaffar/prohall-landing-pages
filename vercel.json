@@ -2,19 +2,25 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/", "destination": "https://shop.prohall.ai/collections/all", "permanent": false }
+    {
+      "source": "/",
+      "destination": "https://shop.prohall.ai/collections/all",
+      "permanent": false
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Robots-Tag", "value": "noindex" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
-    },
-    {
-      "source": "/select-one/v1/assets/(.*)",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600" }]
     }
   ]
 }

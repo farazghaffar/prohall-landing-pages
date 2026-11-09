@@ -1,0 +1,115 @@
+/* Version B — editorial layout. Loaded after styles.css, so it reuses the same
+   store tokens (colors, fonts, radius) and only changes layout. */
+
+.b-announce { background: var(--sand); color: var(--espresso); }
+.b .site-header { background: rgba(250, 246, 241, .95); }
+
+/* ---------- Hero: centered, arched photo ---------- */
+.b-hero { text-align: center; padding: 64px 0 0; background: linear-gradient(180deg, var(--sand) 0%, var(--ivory) 78%); overflow: hidden; }
+.b-hero .eyebrow { justify-content: center; }
+.b-hero .eyebrow::after { content: ""; width: 28px; height: 1.5px; background: var(--champagne); }
+.b-hero h1 { font-size: clamp(2.3rem, 5.6vw, 4.4rem); max-width: 17ch; margin: 0 auto 18px; }
+.b-hero .hero-lede { margin: 0 auto; max-width: 40em; }
+.b-hero .price-row { justify-content: center; margin: 24px 0 20px; }
+.b-hero .cta-row { justify-content: center; }
+.b-arch { position: relative; width: min(440px, 86%); margin: 48px auto 0; aspect-ratio: 4 / 4.6; border-radius: 999px 999px 0 0; background: radial-gradient(circle at 50% 35%, #fff 0%, var(--cream) 60%, #ead8d2 100%); display: grid; place-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+.b-arch img { width: 74%; max-height: 82%; object-fit: contain; filter: drop-shadow(0 26px 34px rgba(31, 26, 24, .22)); }
+.b-arch .float-tag { bottom: 14%; top: auto; }
+.b-arch .float-tag.t1 { left: -14%; bottom: 46%; }
+.b-arch .float-tag.t2 { right: -14%; }
+@media (max-width: 640px) {
+  .b-hero { padding-top: 40px; }
+  .b-hero h1 { font-size: clamp(2rem, 8.6vw, 2.6rem); }
+  .b-hero .cta-row .btn { flex: 1 1 100%; }
+  .b-arch { width: 72%; margin-top: 32px; }
+  .b-arch .float-tag.t1 { left: -18%; }
+  .b-arch .float-tag.t2 { right: -18%; }
+}
+
+/* Highlights bar under the hero */
+.b-strip { background: var(--espresso); color: var(--sand); }
+.b-strip ul { list-style: none; margin: 0 auto; padding: 18px 20px; max-width: var(--wrap); display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 34px; font-size: .82rem; letter-spacing: .16em; text-transform: uppercase; }
+.b-strip li { display: inline-flex; align-items: center; gap: 12px; }
+.b-strip li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--champagne); }
+
+/* ---------- Benefits: sticky intro + numbered list ---------- */
+.b-benefits { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: start; }
+.b-benefits .intro { position: sticky; top: 96px; }
+.b-benefits .intro h2 { font-size: clamp(1.9rem, 3.8vw, 2.9rem); }
+.b-benefits .intro p { color: var(--cocoa); font-size: 1.05rem; margin-bottom: 26px; }
+.b-list { list-style: none; margin: 0; padding: 0; counter-reset: b; }
+.b-list li { counter-increment: b; display: grid; grid-template-columns: 64px 1fr; gap: 6px 18px; padding: 24px 0; border-top: 1px solid var(--line); }
+.b-list li:last-child { border-bottom: 1px solid var(--line); }
+.b-list li::before { content: counter(b, decimal-leading-zero); grid-row: span 2; font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--gold); }
+.b-list h3 { font-size: 1.3rem; margin: 0; }
+.b-list p { margin: 0; color: var(--muted); }
+@media (max-width: 880px) { .b-benefits { grid-template-columns: 1fr; gap: 28px; } .b-benefits .intro { position: static; } }
+
+/* ---------- Who + spec tiles ---------- */
+.b-who { text-align: center; }
+.b-who .ticks { display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; text-align: left; max-width: 880px; margin: 0 auto 40px; }
+@media (max-width: 700px) { .b-who .ticks { grid-template-columns: 1fr; } }
+.b-tiles { display: flex; flex-wrap: wrap; gap: 12px; text-align: left; }
+.b-tile { flex: 1 1 250px; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.b-tile span { display: block; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.b-tile strong { font-family: var(--serif); font-weight: 500; font-size: 1.12rem; line-height: 1.3; }
+
+/* ---------- Formula: menu-style rows on light ---------- */
+.b-menu { max-width: 900px; margin: 0 auto; border-top: 1px solid var(--line-gold, rgba(201, 166, 107, .55)); }
+.b-menu article { display: grid; grid-template-columns: 70px 1fr 1.3fr; gap: 18px; align-items: baseline; padding: 26px 0; border-bottom: 1px solid rgba(201, 166, 107, .55); }
+.b-menu .num { font-family: var(--serif); color: var(--champagne); letter-spacing: .1em; }
+.b-menu h3 { font-size: 1.55rem; margin: 0; }
+.b-menu p { margin: 0; color: var(--cocoa); }
+.b-menu .size { display: block; margin-top: 6px; font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-deep); }
+.b-foot { text-align: center; color: var(--cocoa); margin: 26px auto 0; max-width: 46em; }
+@media (max-width: 700px) { .b-menu article { grid-template-columns: 44px 1fr; } .b-menu p { grid-column: 2; } }
+
+/* ---------- How to use: vertical timeline ---------- */
+.b-timeline { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; counter-reset: t; position: relative; }
+.b-timeline::before { content: ""; position: absolute; left: 23px; top: 8px; bottom: 8px; width: 1.5px; background: linear-gradient(var(--champagne), var(--gold)); }
+.b-timeline li { counter-increment: t; position: relative; padding: 0 0 30px 74px; }
+.b-timeline li::before { content: counter(t); position: absolute; left: 0; top: 0; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--white); border: 1.5px solid var(--gold); font-family: var(--serif); font-size: 1.2rem; color: var(--gold-deep); }
+.b-timeline h3 { font-size: 1.25rem; margin: 10px 0 4px; }
+.b-timeline p { margin: 0; color: var(--muted); }
+.b .note { max-width: 760px; margin: 8px auto 0; }
+
+/* ---------- Gallery: feature + grid (fixed row heights, no holes) ---------- */
+.b-gallery { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 250px; gap: 14px; }
+.b-gallery figure { margin: 0; border-radius: var(--radius); overflow: hidden; background: var(--white); border: 1px solid var(--line); }
+.b-gallery figure:first-child { grid-column: span 2; grid-row: span 2; }
+.b-gallery figure:nth-child(4):last-child { grid-column: span 2; }
+.b-gallery img { width: 100%; height: 100%; object-fit: cover; }
+.b-gallery figure:nth-child(4):last-child img { object-fit: contain; }
+@media (max-width: 760px) { .b-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 160px; } }
+
+/* ---------- Buy: dark band ---------- */
+.b-buy { background: var(--espresso); color: var(--ivory); padding: 84px 0; }
+.b-buy .wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 56px; align-items: center; }
+.b-buy .b-arch { margin: 0 auto; width: min(380px, 100%); }
+.b-buy h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); color: var(--ivory); }
+.b-buy .eyebrow { color: var(--champagne); }
+.b-buy .price-note, .b-buy .info-list li { color: var(--sand); }
+.b-buy .info-list a { color: var(--ivory); }
+.b-buy .info-list svg { color: var(--champagne); }
+.b-buy .btn-primary { background: var(--gold-deep); }
+.b-buy .btn-primary:hover { background: #874a57; }
+.b-buy .btn-ghost { color: var(--ivory); border-color: rgba(250, 246, 241, .6); }
+.b-buy .btn-ghost:hover { background: var(--ivory); color: var(--espresso); }
+.b-buy .size-card { color: var(--espresso); }
+@media (max-width: 880px) { .b-buy .wrap { grid-template-columns: 1fr; gap: 28px; } .b-buy .b-arch { width: 62%; } .b-buy .cta-row .btn { flex: 1 1 100%; } }
+
+/* ---------- FAQ: split ---------- */
+.b-faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 56px; align-items: start; }
+.b-faq h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
+.b-faq .faq { max-width: none; margin: 0; }
+.b-faq .faq details:first-child { border-top: 1px solid var(--line); }
+@media (max-width: 880px) { .b-faq { grid-template-columns: 1fr; gap: 16px; } }
+
+/* ---------- Final: blush ---------- */
+.b-final { background: linear-gradient(180deg, var(--ivory), var(--sand)); text-align: center; padding: 96px 0; }
+.b-final .eyebrow { justify-content: center; }
+.b-final .eyebrow::after { content: ""; width: 28px; height: 1.5px; background: var(--champagne); }
+.b-final h2 { font-size: clamp(2rem, 4.6vw, 3.4rem); max-width: 18ch; margin: 0 auto 14px; }
+.b-final p { color: var(--cocoa); max-width: 36em; margin: 0 auto 30px; }
+.b-final .cta-row { justify-content: center; }
+@media (max-width: 560px) { .b-final .cta-row .btn { flex: 1 1 100%; } }
